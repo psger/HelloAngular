@@ -1,0 +1,12 @@
+<input type="text" [(ngModel)]="keyWord"> <button (click)="doSearch()">搜索</button>
+<hr>
+
+<ul>
+  <li>
+    列表
+  </li>
+</ul>
+
+<ul>
+  <li *ngFor="let item of keyList;let key = index;">{{item}} ---<button (click)="doDelete(key)">X</button></li>
+</ul>

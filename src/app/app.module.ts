@@ -5,11 +5,13 @@ import { AppComponent } from './app.component';
 import { FormComponent } from './components/form/form.component';
 // 引入表单相关的模块才可以使用双向绑定
 import { FormsModule} from '@angular/forms';
+import { SearchComponent } from './components/search/search.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FormComponent
+    FormComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
