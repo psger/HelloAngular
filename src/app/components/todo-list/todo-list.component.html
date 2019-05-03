@@ -1,0 +1,19 @@
+<h2>todo List</h2>
+
+<div class="todoList">
+  <input type="text" [(ngModel)]="keyWord" (keyup)="todoAdd($event)">
+<hr>
+
+<h3>TODO</h3>
+
+<ul>
+  <li *ngFor="let item of todoList;let key = index;" [hidden]="item.status==1">
+    <input type="checkbox" [(ngModel)]="item.status">
+    {{item.title}} ---<button (click)="hasDo(key)">✔️</button></li>
+</ul>
+
+<h3>DONE</h3>
+<ul>
+  <li *ngFor="let item of todoList;let key = index;" [hidden]="item.status==0">{{item.title}}</li>
+</ul>
+</div>

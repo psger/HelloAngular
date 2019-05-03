@@ -6,12 +6,14 @@ import { FormComponent } from './components/form/form.component';
 // 引入表单相关的模块才可以使用双向绑定
 import { FormsModule} from '@angular/forms';
 import { SearchComponent } from './components/search/search.component';
+import { TodoListComponent } from './components/todo-list/todo-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FormComponent,
-    SearchComponent
+    SearchComponent,
+    TodoListComponent
   ],
   imports: [
     BrowserModule,
