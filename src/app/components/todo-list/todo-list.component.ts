@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { StorageService } from '../../services/storage.service';
 @Component({
   selector: 'app-todo-list',
   templateUrl: './todo-list.component.html',
@@ -10,9 +10,13 @@ export class TodoListComponent implements OnInit {
   public todoList:any[] = [];
   public done:any[] = [];
 
-  constructor() { }
+  constructor(private storage: StorageService) { }
 
   ngOnInit() {
+    this.todoList = this.storage.get('todoList');
+    if (this.todoList == null) {
+      this.todoList = [];
+    }
   }
 
   todoAdd(e) {
@@ -29,12 +33,13 @@ export class TodoListComponent implements OnInit {
             }
           this.keyWord = '';
     }
+    this.storage.set('todoList', this.todoList);
   }
 
-  hasDo(key) {
+  hasDo() {
     // this.done.push(this.todoList[key]);
     //this.todoList.splice(key, 1);
-
+    this.storage.set('todoList', this.todoList);
   }
 
   // 异步的 会存在问题
